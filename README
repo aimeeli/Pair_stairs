@@ -1,0 +1,13 @@
+
+1.python manage.py syncdb
+2.url(r'', include('pair_stair.pair_wall.urls')),
+    the path has to be fully
+3.Templates path should added into the setting file
+    PROJECT_DIR = os.path.dirname(__file__)
+    TEMPLATE_DIRS = (
+        os.path.join(PROJECT_DIR, 'templates')
+        # Don't forget to use absolute paths, not relative paths.
+    )
+4.Environment setting important, and why
+5. from django.utils import unittest vs import unittest
+6. Render_to_response, pass the argument in dictionary to the html, and html use the key to get the staff

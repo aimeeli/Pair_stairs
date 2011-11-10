@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Pair Stairs</title>
+</head>
+<body>
+    <table border="2">
+    {% for programmer in programmers %}
+        <tr>
+            <td>{{ programmer.name }}</td>
+            {% for pair in pairs %}
+                {% if pair.first_member == programmer.name %}
+                    <td>
+                     <a href="/addcount/{{ pair.first_member }}&{{ pair.second_member }}">{{ pair.count }}</a>
+{#                    <input type="button" value = {{ pair.count }} onclick = "/addcount/{{ pair.first_member }}&{{ pair.second_member }}">#}
+                    </td>
+                {% endif %}
+            {% endfor %}
+            <td>{{ programmer.name }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
